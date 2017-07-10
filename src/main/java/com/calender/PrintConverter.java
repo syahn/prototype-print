@@ -25,7 +25,28 @@ public class PrintConverter {
                 "--height",
                 "735",
                 request.getIn(),
-                request.getName()
+                request.getOut()
+        );
+        ProcessBuilder pb = new ProcessBuilder(pdfCommand);
+        Process pdfProcess;
+
+        try {
+            pdfProcess = pb.start();
+            waitForProcessInCurrentThread(pdfProcess);
+
+        } catch (IOException ex) {
+            LOG.error("Could not create a PDF file because of an error occurred: ", ex);
+            throw new RuntimeException("PDF generation failed");
+        }
+    }
+
+    public void createPdf(PrintRequest request, HttpServletResponse response) {
+        List<String> pdfCommand = Arrays.asList(
+                "wkhtmltoimage",
+                "--height",
+                "735",
+                request.getIn(),
+                request.getOut()
         );
         ProcessBuilder pb = new ProcessBuilder(pdfCommand);
         Process pdfProcess;
