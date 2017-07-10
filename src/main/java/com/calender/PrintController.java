@@ -36,8 +36,8 @@ public class PrintController {
 //        System.out.print("url" + print.getIn() + url);
 //        model.addAttribute("print", print);
 
-        print.setIn("C:/Users/NAVER/prototype/target/classes/static/html/sample_7.html");
-        print.setName("C:/Users/NAVER/prototype/target/classes/static/images/sample_7.png");
+        print.setIn("C:/Users/NAVER/prototype/target/classes/templates/index.html");
+        print.setName("C:/Users/NAVER/prototype/target/classes/static/images/sample_7.jpeg");
 //        System.out.print(print.getIn() + print.getName() + "hello");
         converter.createImage(print, response);
 

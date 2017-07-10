@@ -22,10 +22,11 @@ public class PrintConverter {
     public void createImage(PrintRequest request, HttpServletResponse response) {
         List<String> pdfCommand = Arrays.asList(
                 "wkhtmltoimage",
+                "--height",
+                "735",
                 request.getIn(),
                 request.getName()
         );
-
         ProcessBuilder pb = new ProcessBuilder(pdfCommand);
         Process pdfProcess;
 

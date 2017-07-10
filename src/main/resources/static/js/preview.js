@@ -1,27 +1,38 @@
-/**
- * Created by NAVER on 2017-07-07.
- */
 
-var myForm = document.getElementById('form-print');
-var printScreenButton = document.getElementById('button__print-screen');
-var printButton = document.getElementById('button-print');
-var printCancelButton = document.getElementById('button__print-cancel');
+$(document).ready(function() {
+    // $("._print").click(function() {
+    //     window.print();
+    // });
 
-myForm.onsubmit = function() {
-    var w = window.open('about:blank','Popup_Window','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=400,height=300,left = 312,top = 234');
-    this.target = 'Popup_Window';
-};
+    $("._close").click(function() {
+        window.close();
+    })
 
-printScreenButton.onclick = function () {
-    window.print();
+    // $("._print .normal").click(function(){
+    //     printPage('externalPage.html');
+    // })
+});
+
+
+    function closePrint () {
+        document.body.removeChild(this.__container__);
+    }
+
+function setPrint () {
+    this.contentWindow.__container__ = this;
+    this.contentWindow.onbeforeunload = closePrint;
+    this.contentWindow.onafterprint = closePrint;
+    this.contentWindow.focus(); // Required for IE
+    this.contentWindow.print();
 }
 
-printButton.onclick = function() {
-    window.close();
-    console.log('click');
-};
-
-printCancelButton.onclick = function() {
-    window.close();
-    console.log('click');
-};
+function printPage (sURL) {
+    var oHiddFrame = document.createElement("iframe");
+    oHiddFrame.onload = setPrint;
+    oHiddFrame.style.visibility = "hidden";
+    oHiddFrame.style.position = "fixed";
+    oHiddFrame.style.right = "0";
+    oHiddFrame.style.bottom = "0";
+    oHiddFrame.src = sURL;
+    document.body.appendChild(oHiddFrame);
+}
