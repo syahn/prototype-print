@@ -29,8 +29,8 @@
     <meta name="twitter:url" itemprop="url" content="http://calendar.naver.com">
 
 
-    <link type="text/css" rel="stylesheet" href="css/calendar_layer.css">
-    <link type="text/css" rel="stylesheet" href="css/calendar_public.css">
+    <link type="text/css" rel="stylesheet" href="../css/calendar_layer.css">
+    <link type="text/css" rel="stylesheet" href="../css/calendar_public.css">
     <!--[if IE 8]>
     <style>
         .layer_view_schedule:before{display:none}
@@ -51,7 +51,7 @@
     <div class="calendar_header">
         <div class="title">
             <h1>
-                <button class="btn_prev" onclick="location.href='/index1'"><span class="blind">이전 달 보기</span></button>
+                <button class="btn_prev" onclick="location.href='/'"><span class="blind">이전 달 보기</span></button>
 
                 <span class="_title">2017.08</span>
                 <button class="btn_next"><span class="blind">다음 달 보기</span></button>
@@ -60,9 +60,11 @@
         </div>
 
         <button class="btn btn_sub">구독</button>
+
         <form id="form-print" th:action="@{preview}" method="post">
-            <button class = "btn print" style="margin-left:420px" type="submit" name="month" value="3">인쇄</button>
+            <button class = "btn print" style="margin-left:420px" type="submit" name="month" value="8">인쇄</button>
         </form>
+
         <!--<button class="btn btn_sub"  style="margin-left:500px;" onclick="popup()" th:action="@{/preview}" method="get">-->
             <!--인쇄-->
         <!--</button>-->
@@ -166,5 +168,5 @@
 <!--__oInitialData.sTodayDate = '2017-07-07 14:27:04';-->
 <!--</script>-->
 <!--<script data-main="main-publicCalendar" src="js/require.js" type="text/javascript"></script>-->
-<script src="js/main.js"></script>
+
 </body></html>

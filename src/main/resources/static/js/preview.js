@@ -14,9 +14,9 @@ $(document).ready(function() {
 });
 
 
-    function closePrint () {
-        document.body.removeChild(this.__container__);
-    }
+function closePrint () {
+    document.body.removeChild(this.__container__);
+}
 
 function setPrint () {
     this.contentWindow.__container__ = this;

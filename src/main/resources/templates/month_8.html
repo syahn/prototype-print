@@ -51,18 +51,17 @@
     <div class="calendar_header">
         <div class="title">
             <h1>
-                <button class="btn_prev"><span class="blind">이전 달 보기</span></button>
+                <button class="btn_prev" onclick="location.href='/month_7'"><span class="blind">이전 달 보기</span></button>
 
-                <span class="_title">2017.06</span>
-                <button class="btn_next" onclick="location.href='/index1'"><span class="blind">다음 달 보기</span></button>
+                <span class="_title">2017.08</span>
+                <button class="btn_next"><span class="blind">다음 달 보기</span></button>
             </h1>
             <button class="today">오늘</button>
         </div>
 
         <button class="btn btn_sub">구독</button>
-
         <form id="form-print" th:action="@{preview}" method="post">
-            <button class = "btn print" style="margin-left:420px" type="submit" name="month" value="2">인쇄</button>
+            <button class = "btn print" style="margin-left:420px" type="submit" name="month" value="8">인쇄</button>
         </form>
         <!--<button class="btn btn_sub"  style="margin-left:500px;" onclick="popup()" th:action="@{/preview}" method="get">-->
             <!--인쇄-->
