@@ -51,6 +51,19 @@
             var endOption = document.getElementById("monthSelect2");
             var endMonth = endOption.options[endOption.selectedIndex].value;
 
+            //총 페이지 수 표시
+
+            $("#monthSelect, #monthSelect2").change(function()
+            {
+                var startMonth = startOption.options[startOption.selectedIndex].value;
+                var endMonth = endOption.options[endOption.selectedIndex].value;
+                var num = endMonth - startMonth+1;
+                var pageNum = document.getElementById("pageNum");
+                pageNum.innerHTML = "총 페이지수: "+num;
+                pageNum.style.visibility = "visible";
+
+            });
+
             //가로, 세로 설정
             var orientation = 0; // 세로
             var landscape = document.getElementById("rdo2_0").checked;
